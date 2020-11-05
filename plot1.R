@@ -1,5 +1,5 @@
 data1<-read.table("./household_power_consumption.txt", header = T, stringsAsFactors = F, sep = ";", na.strings = "?")
-data2<-subset(data1, data1$Date >= 1/2/2007 | data1$Date<=2/2/2007)
+data2<-subset(data1, data1$Date >= "1/2/2007" | data1$Date<= "2/2/2007")
 gap<-as.numeric(data2$Global_active_power)
 png("plot1.png")
 hist(gap, col = "red",main = "Global Active Power", xlab = "Global Active Power (kilowatts)", ylab = "Frequency")
